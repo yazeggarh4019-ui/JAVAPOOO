@@ -1,0 +1,16 @@
+class Article {
+    private String reference;
+    private String designation;
+    private double prixHT;
+    private static double tauxTVA = 20;
+
+    public Article() {}
+
+    public Article(String ref, String des, double prix) {
+        reference = ref;
+        designation = des;
+        prixHT = prix;
+    }
+
+    public Article(String ref, String des) {
+        reference = ref
