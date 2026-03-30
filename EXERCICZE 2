@@ -1,0 +1,28 @@
+class Complexe {
+    private double reelle;
+    private double imaginaire;
+
+    public Complexe() {
+        this.reelle = 0;
+        this.imaginaire = 0;
+    }
+
+    public Complexe(double r, double i) {
+        this.reelle = r;
+        this.imaginaire = i;
+    }
+
+    public Complexe plus(Complexe c) {
+        return new Complexe(this.reelle + c.reelle,
+                            this.imaginaire + c.imaginaire);
+    }
+
+    public Complexe moins(Complexe c) {
+        return new Complexe(this.reelle - c.reelle,
+                            this.imaginaire - c.imaginaire);
+    }
+
+    public void afficher() {
+        System.out.println(reelle + " + " + imaginaire + "i");
+    }
+}
