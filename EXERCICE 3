@@ -1,0 +1,54 @@
+class DateSimple {
+    int jour, mois, annee;
+
+    public DateSimple(int j, int m, int a) {
+        jour = j;
+        mois = m;
+        annee = a;
+    }
+}
+
+class Employe {
+    private int matricule;
+    private String nom;
+    private String prenom;
+    private DateSimple naissance;
+    private DateSimple embauche;
+    private double salaire;
+
+    public Employe(int m, String n, String p, DateSimple dn, DateSimple de, double s) {
+        matricule = m;
+        nom = n;
+        prenom = p;
+        naissance = dn;
+        embauche = de;
+        salaire = s;
+    }
+
+    public int age() {
+        return 2026 - naissance.annee;
+    }
+
+    public int anciennete() {
+        return 2026 - embauche.annee;
+    }
+
+    public void augmentationSalaire() {
+        int a = anciennete();
+
+        if (a < 5)
+            salaire += salaire * 0.02;
+        else if (a < 10)
+            salaire += salaire * 0.05;
+        else
+            salaire += salaire * 0.10;
+    }
+
+    public void afficherEmploye() {
+        System.out.println("Matricule: " + matricule);
+        System.out.println("Nom: " + nom + " " + prenom);
+        System.out.println("Age: " + age());
+        System.out.println("Anciennete: " + anciennete());
+        System.out.println("Salaire: " + salaire);
+    }
+}
